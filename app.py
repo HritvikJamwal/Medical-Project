@@ -12,7 +12,7 @@ from keras.models import load_model
 import cv2
 from cv2 import imread
 import numpy as np
-from tensorflow.keras.models import load_model
+
 import cv2
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array
