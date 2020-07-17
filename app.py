@@ -9,11 +9,10 @@ Created on Thu Jun 11 22:15:24 2020
 
 import numpy
 from keras.models import load_model
-import cv2
-from cv2 import imread
+
 import numpy as np
 
-import cv2
+
 from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing.image import img_to_array
 from flask import request, jsonify, Flask, render_template
