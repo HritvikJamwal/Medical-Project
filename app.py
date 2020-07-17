@@ -8,18 +8,17 @@ Created on Thu Jun 11 22:15:24 2020
 
 
 import numpy
-from keras.models import load_model
+
 
 import numpy as np
 
 
-from keras.preprocessing.image import ImageDataGenerator
-from keras.preprocessing.image import img_to_array
+
 from flask import request, jsonify, Flask, render_template
 import base64
 import io
 from PIL import Image
-from keras.initializers import glorot_uniform
+
 
 
 app = Flask(__name__)
