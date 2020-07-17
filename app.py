@@ -8,8 +8,8 @@ Created on Thu Jun 11 22:15:24 2020
 
 
 import numpy
-
-
+import cv2
+from cv2 import imread
 import numpy as np
 from tensorflow.keras.models import load_model
 
