@@ -11,3 +11,4 @@ scikit-learn==0.22.2
 pandas==0.25.1
 opencv-python>=3.1.0.0
 pybase64>=1.0.1
+setuptools>=41.0.0
