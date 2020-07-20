@@ -5,7 +5,7 @@ Created on Thu Jun 11 22:15:24 2020
 @author: hritvik
 """
 
-from keras.models import load_model
+
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
