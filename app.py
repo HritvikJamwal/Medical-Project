@@ -11,17 +11,25 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 from flask import request, jsonify, Flask, render_template
+from keras.initializers import glorot_uniform
+
+app = Flask(__name__)
 
 
 
-model = load_model('malaria_model.h5')
-    
+   
+@app.route("/")
 def malaria():
-    data = image.load_img('infectedmalaria.jpeg', target_size=(100, 100, 3))
+    model = load_model('malaria_model.h5')
+    data = image.load_img('normalmalaria.jpeg', target_size=(100, 100, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0 / 255
     predicted = model.predict(data)
-    print("Chances of infected cell:", (("%0.2f"%(1-predicted))))
+    return render_template('home.html', prediction = (("%0.2f"%(1-predicted))))
     
           
-malaria()
+
+
+
+if __name__ == '__main__':
+    app.run()
