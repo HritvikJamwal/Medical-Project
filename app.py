@@ -11,7 +11,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 
 from flask import request, jsonify, Flask, render_template
-from keras.initializers import glorot_uniform
+
 
 app = Flask(__name__)
 
