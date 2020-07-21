@@ -5,7 +5,7 @@ Created on Thu Jun 11 22:15:24 2020
 @author: hritvik
 """
 
-
+from keras.models import load_model
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
@@ -17,15 +17,15 @@ app = Flask(__name__)
 
 
 
-model = load_model('malaria_model.h5')  
+   
 @app.route("/")
 def malaria():
-    
-    data = image.load_img('normalmalaria.jpeg', target_size=(100, 100, 3))
+    model = load_model('new_malaria_model.h5')
+    data = image.load_img('normalmalaria.jpeg', target_size=(50, 50, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0 / 255
     predicted = model.predict(data)
-    return render_template('home.html')
+    return render_template('home.html', prediction = (("%0.2f"%(predicted[0][0]))))
     
           
 
