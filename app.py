@@ -21,7 +21,7 @@ app = Flask(__name__)
 @app.route("/")
 def malaria():
     model = load_model('malaria_model.h5')
-    data = image.load_img('normalmalaria.jpeg', target_size=(50, 50, 3))
+    data = image.load_img('normalmalaria.jpeg', target_size=(100, 100, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0 / 255
     predicted = model.predict(data)
