@@ -25,7 +25,9 @@ def malaria():
     data = np.expand_dims(data, axis=0)
     data = data * 1.0 / 255
     predicted = model.predict(data)
-    return render_template('home.html', prediction = (("%0.2f"%(predicted[0][0]))))
+    answer = (("%0.2f"%(predicted[0][0])))
+    print(answer)
+    return render_template('home.html', prediction = answer)
     
           
 
