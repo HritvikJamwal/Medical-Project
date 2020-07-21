@@ -20,14 +20,13 @@ app = Flask(__name__)
    
 @app.route("/")
 def malaria():
-    model = load_model('malaria_model.h5')
-    data = image.load_img('normalmalaria.jpeg', target_size=(100, 100, 3))
+    model = load_model('chestxray.h5')
+    data = image.load_img('normal.jpeg', target_size=(250, 250, 3))
     data = np.expand_dims(data, axis=0)
     data = data * 1.0 / 255
     predicted = model.predict(data)
-    answer = (("%0.2f"%(predicted[0][0])))
-    print(answer)
-    return render_template('home.html', prediction = answer)
+    print((("%0.2f"%(predicted[0][0]))))
+    return render_template('home.html', prediction = (("%0.2f"%(predicted[0][0]))))
     
           
 
