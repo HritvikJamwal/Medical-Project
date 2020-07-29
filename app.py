@@ -77,7 +77,8 @@ def upload_file():
         data = np.expand_dims(data, axis=0)
         data = data * 1.0 / 255
         predicted = malaria_model.predict(data)
-        answer = 1- "%0.2f"%(predicted[0][0])
+        answer = "%0.2f"%(predicted[0][0])
+        answer = answer - 1
         if(predicted<0.50):
             return render_template('predict.html', answer = answer, colour = 'red')
         else:
