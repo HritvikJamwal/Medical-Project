@@ -26,7 +26,7 @@
   		<div class="container">
   			<div class="row m-auto">
   				<div class="col-12 w-100 text-center">
-            <a class="navbar-brand w-100" href="/"><img class="logo" src="./static/logo.png"></a>
+            <a class="navbar-brand w-100" href="/home"><img class="logo" src="./static/logo.png"></a>
 
 			      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 			        <span class="oi oi-menu"></span> Menu
@@ -35,13 +35,13 @@
   				<div class="col-12 w-100 text-center">
   					<div class="collapse navbar-collapse" id="ftco-nav">
 			        <ul class="navbar-nav m-auto">
-			          <li class="nav-item "><a href="/" class="nav-link">Home</a></li>
+			          <li class="nav-item "><a href="/home" class="nav-link">Home</a></li>
 			          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
 			          <li class="nav-item active"><a href="/Pneumonia" class="nav-link">Pneumonia</a></li>
 			          <li class="nav-item"><a href="/Malaria" class="nav-link">Malaria</a></li>
-                <li class="nav-item"><a href="trainer.html" class="nav-link">Tumour</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Heart</a></li>
-			          <li class="nav-item"><a href="contact.html" class="nav-link">Sound</a></li>
+                <li class="nav-item"><a href="/tumour" class="nav-link">Tumour</a></li>
+                <li class="nav-item"><a href="/heart" class="nav-link">Heart</a></li>
+			          <li class="nav-item"><a href="/sound" class="nav-link">Sound</a></li>
 			        </ul>
 			      </div>
   				</div>
@@ -56,7 +56,6 @@
         <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
             <h1 style="color: rgb(255, 255, 255); font-weight: 500;"class="mb-3 bread">PNEUMONIA DETECTION</h1>
-            <p class="breadcrumbs"><span class="mr-2"><a style="color: white" href="about.html">About</a></span> <span><a style="color: white;"href="contact.html">Contact</a></span></p>
           </div>
         </div>
       </div>
@@ -69,17 +68,18 @@
     
        
     
-      <form action="/upload11" method="post" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto;">
+      <form action="/upload11" method="post" enctype="multipart/form-data" style="margin-top: 30px; width: 80%; text-align: center; margin: auto;" onsubmit="showloading()">
           
            <input type="file" name="image" style="text-align: center; margin: 50px auto">
         <br>
+        <div style="text-align: center">
+          <img id="loading_image" style="display: none" src="{{ url_for('static', filename='loading.gif') }}" style="max-width: 50px; max-height: 30px;">
+      </div>
             <input type="submit" value="Submit" style="text-align: center; margin: 50px auto; width: 150px;">
       </form>
       <hr>
       
-        <div style="text-align: center">
-            <img id="loading_image" style="display: none" src="./static/loading.gif">
-        </div>
+        
        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
