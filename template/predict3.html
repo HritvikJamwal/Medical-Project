@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pneumonia</title>
+    <link rel="shortcut icon" href="./static/logo.png" type="image/x-icon">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='animate.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+    
+  </head>
+
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+      function showloading() {
+          image = document.getElementById('loading_image');
+          image.style.display = 'inline'
+      }
+  </script>
+  	
+    <!-- END nav -->
+
+    
+
+            
+    <div style="width: 90%; margin: auto; text-align: center">
+    
+
+    
+      <h3><b>Probability for Tumour: <span style="color: {{ colour }};">{{ answer }} </span></b></h3>
+      
+       <a href="/tumour"><input type="submit" value="Back"></input> </a>
+  </div>
+  
+
+		
+
+  
+    
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+  <script src="{{ url_for('static', filename='jquery.stellar.min.js') }}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/3.0.0-beta.6/aos.js"></script>
+  <script src="{{ url_for('static', filename='scrollax.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+    
+  </body>
+</html>
+
