@@ -84,6 +84,26 @@ def upload_file():
             return render_template('predict.html', answer = answer, colour = 'green')           
         
 
+@app.route('/upload3', methods=['POST','GET'])
+def upload_file2():
+
+    if request.method == 'GET':
+        return render_template('index3.html')
+    else:
+        file = request.files['image']
+        malaria_path = os.path.join(uploads, file.filename)
+        file.save(malaria_path)
+        malaria_model=load_model("tumour_model.h5")
+        data = image.load_img(malaria_path, target_size=(150, 150, 3))
+        data = np.expand_dims(data, axis=0)
+        data = data * 1.0 / 255
+        predicted = malaria_model.predict(data)
+        answer = "%0.2f"%(1-predicted[0][0])
+        if(float(answer)>0.50):
+            return render_template('predict3.html', answer = answer, colour = 'red')
+        else:
+            return render_template('predict3.html', answer = answer, colour = 'green')  
+        
 '''
 @app.route('/uploads/<filename>')
 def send_file(filename):
@@ -110,9 +130,9 @@ def about():
     return render_template("about.html")
 
 
-@app.route("/cancer")
+@app.route("/tumour")
 def cancer():
-    return render_template("cancer.html")
+    return render_template("tumour.html")
 
 
 @app.route("/diabetes")
